@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Orbitron", "sans-serif"],
-        body: ["Rajdhani", "sans-serif"],
+        heading: ["DynaPuff", "cursive"],
+        body: ["DynaPuff", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
