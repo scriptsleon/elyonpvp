@@ -8,6 +8,7 @@ import Wiki from "./pages/Wiki";
 import Commands from "./pages/Commands";
 import Recruitment from "./pages/Recruitment";
 import News from "./pages/News";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/commands" element={<Commands />} />
           <Route path="/recruitment" element={<Recruitment />} />
           <Route path="/news" element={<News />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

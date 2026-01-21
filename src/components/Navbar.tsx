@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Příkazy", path: "/commands" },
   { name: "Nábory", path: "/recruitment" },
   { name: "Novinky", path: "/news" },
+  { name: "Admin", path: "/admin" },
 ];
 
 const Navbar = () => {
