@@ -4,8 +4,9 @@ import { Menu, X, Users, Wifi, WifiOff } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import elyonLogo from "@/assets/elyon-logo.png";
 import { Button } from "@/components/ui/button";
+import { UserMenu } from "@/components/UserMenu";
 
-// Public navigation links - Admin is NOT included (requires auth)
+// Public navigation links - Admin is NOT included (requires auth via UserMenu)
 const navLinks = [
   { name: "Domů", path: "/" },
   { name: "Wikipedia", path: "/wiki" },
@@ -81,7 +82,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Server Status & Connect */}
+          {/* Server Status & User Menu */}
           <div className="hidden md:flex items-center gap-4">
             {/* Server Status Badge */}
             <div className="flex items-center gap-2 glass px-3 py-1.5 rounded-full">
@@ -101,6 +102,9 @@ const Navbar = () => {
                 {serverStatus.players}/{serverStatus.maxPlayers}
               </span>
             </div>
+
+            {/* User Menu (Login/Profile) */}
+            <UserMenu />
 
             <Button variant="connect" size="sm">
               Připojit se
@@ -143,7 +147,7 @@ const Navbar = () => {
                 </Link>
               ))}
               
-              {/* Mobile Server Status */}
+              {/* Mobile Server Status & User */}
               <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
                 <div className="flex items-center gap-2">
                   {serverStatus.online ? (
@@ -155,10 +159,12 @@ const Navbar = () => {
                     {serverStatus.players}/{serverStatus.maxPlayers} hráčů
                   </span>
                 </div>
-                <Button variant="connect" size="sm">
-                  Připojit se
-                </Button>
+                <UserMenu />
               </div>
+              
+              <Button variant="connect" size="sm" className="mt-2">
+                Připojit se
+              </Button>
             </div>
           </motion.div>
         )}
