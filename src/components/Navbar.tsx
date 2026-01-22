@@ -5,13 +5,13 @@ import { Link, useLocation } from "react-router-dom";
 import elyonLogo from "@/assets/elyon-logo.png";
 import { Button } from "@/components/ui/button";
 
+// Public navigation links - Admin is NOT included (requires auth)
 const navLinks = [
   { name: "Domů", path: "/" },
   { name: "Wikipedia", path: "/wiki" },
   { name: "Příkazy", path: "/commands" },
   { name: "Nábory", path: "/recruitment" },
   { name: "Novinky", path: "/news" },
-  { name: "Admin", path: "/admin" },
 ];
 
 const Navbar = () => {
